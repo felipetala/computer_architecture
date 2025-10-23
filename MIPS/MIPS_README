@@ -1,0 +1,13 @@
+- MIPS stands for Microprocessor without Interlocked Pipelined Stages
+  -> Pipelining refers to performing independent actions at the same time.
+    -> Pipelining your laundry would mean you are ironing clothes while you have a new batch in the dyer and washer.
+    -> Not pipelining your laundry would mean that you take care of washing, then drying, and finally iron your clothes from the first batch before you put the second one in the washer.
+    -> In the computer world, laundry is an instruction to be performed (eg: fetch, read, write, etc.)
+- Interlocked Stages means that the washing, drying and clothes ironing are dependent on each other.
+  -> Not having Interlocked Stages means that you automatically put clothes from the washer to the dryer once they are done, and iron them once the dryer is done.
+  -> But what if the clothes' batch was not washed properly? If you don't have Interlocked Pipelined Stages, you will dry and iron dirty clothes, and will have to send them back to the washer after the entire process.
+  -> If you **do** have Interlocked Pipelined Stages, you will check the clothes' condition after each process. This inspection takes time, but it ensures the final result is a clean, ironed batch of clothes.
+- The computer architect, depending on the application, needs to choose whether or not it is convinient to have Interlocked Pipelined Stages.
+  -> If you have washed the same clothing item 1000 times with the same soap, washer, dryer, and iron, then it would be logical to skip the inspection process.
+  -> But if you just moved to a new place, and the washer and dryer are new, you want to check the conditions of the items, since the new washer could require more soap for a perfect cleanup, or the dryer could take longer to dry cotton clothes.
+- An example of using Interlocked Pipelined Stages is when using clusters in Parallel Computing. Since sometimes instructions take hours or days to run before getting a final result, you want to set checkpoints. If you don't you could be waiting an entire week to get the wrong output and have to rerun the instructions again for an entire second week.
